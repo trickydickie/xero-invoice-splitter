@@ -53,6 +53,7 @@ func zipFiles(targetDir string) (err error){
 		fmt.Println(err)
 		return err
 	}
+	return nil
 }
 
 func splitInvoices(inFile string, outDir string, zip bool, dlg dialog.CustomDialog, prog *widget.ProgressBar) (err error) {
