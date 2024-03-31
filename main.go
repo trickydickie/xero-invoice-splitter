@@ -1,3 +1,4 @@
+//go:generate go-winres make -in=winres.json
 package main
 
 import (
@@ -8,6 +9,7 @@ import (
 
 	"fyne.io/fyne/v2"
 	"fyne.io/fyne/v2/app"
+	"fyne.io/fyne/v2/canvas"
 	"fyne.io/fyne/v2/container"
 	"fyne.io/fyne/v2/dialog"
 	"fyne.io/fyne/v2/widget"
@@ -98,6 +100,8 @@ func splitInvoices(inFile string, outDir string, zip bool, dlg dialog.CustomDial
 func main() {
 	myApp := app.New()
 	myWindow := myApp.NewWindow("Xero Invoice Splitter")
+	icon := canvas.NewImageFromResource(resourceIcon64Png)
+	myWindow.SetIcon(icon.Resource)
 	myWindow.Resize(fyne.NewSize(600, 400)) // Set default window size
 
 	inputFilePath := ""
