@@ -1,9 +1,12 @@
 package main
 
 import (
+	"archive/zip"
 	"errors"
 	"fmt"
 	"io"
+	"os"
+	"path"
 	"regexp"
 	"strings"
 
@@ -40,4 +43,56 @@ func validateFile(ctx *model.Context)(err error) {
 	}
 
 	return nil
+}
+
+func addFiles(w *zip.Writer, basePath string) {
+	files, err := os.ReadDir(basePath)
+	if err != nil {
+		fmt.Println(err)
+	}
+	for _, file := range files {
+		dat, err := os.ReadFile(path.Join(basePath, file.Name()))
+		if err != nil {
+			fmt.Println(err)
+		}
+
+		f, err := w.Create(file.Name())
+		if err != nil {
+			fmt.Println(err)
+		}
+		_, err = f.Write(dat)
+		if err != nil {
+			fmt.Println(err)
+		}
+	}
+}
+
+func zipFiles(targetDir string) (err error){
+	outFile, err := os.Create("output.zip")
+	if err != nil {
+		fmt.Println(err)
+		return err
+	}
+	defer outFile.Close()
+
+	w := zip.NewWriter(outFile)
+
+	addFiles(w, targetDir)
+
+	err = w.Close()
+	if err != nil {
+		fmt.Println(err)
+		return err
+	}
+	return nil
+}
+
+func truncatePath(filepath string, maxLen int) string {
+	if len(filepath) <= maxLen {
+		return filepath
+	}
+
+	truncatedPath := "..." + filepath[len(filepath)-maxLen+3:]
+
+	return truncatedPath
 }
