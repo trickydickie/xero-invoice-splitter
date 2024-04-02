@@ -1,13 +1,11 @@
-# Xero Invoice Splitter
-
 ## Background
 
 Welcome. If you are here then that means you have encountered the pretty annoying problem in the Xero accounting software of trying to export invoices as individual PDF's in bulk, that all of the following folks have struggled with:
 
-https://central.xero.com/s/question/0D53m00006nawMoCAI/can-i-export-invoices-as-individual-pdfs-in-bulk
-https://central.xero.com/s/question/0D53m000063DqEoCAK/bulk-export-of-invoices-in-pdf
-https://central.xero.com/s/question/0D53m00005mcTYrCAM/export-all-invoices
-https://central.xero.com/s/question/0D53m00005ehYAjCAM/how-to-download-all-invoices-at-once
+<https://central.xero.com/s/question/0D53m00006nawMoCAI/can-i-export-invoices-as-individual-pdfs-in-bulk>
+<https://central.xero.com/s/question/0D53m000063DqEoCAK/bulk-export-of-invoices-in-pdf>
+<https://central.xero.com/s/question/0D53m00005mcTYrCAM/export-all-invoices>
+<https://central.xero.com/s/question/0D53m00005ehYAjCAM/how-to-download-all-invoices-at-once>
 
 and so on..
 
@@ -18,9 +16,11 @@ This PDF is difficult to split using regular PDF splitters because the exported 
 Apologies in advance for the crude UI, I hacked it together quickly, but it does the job.
 
 ## Installation Instructions
-This app consists of a single exe that has no other dependencies. All you need to do is download the exe and click on it to run it. Windows Smart Scan will likely complain as this is not signed with an EV certificate and it is not regularly downloaded, so just hit the good old "Run Anyway".
+This app consists of a single exe that has no other dependencies. All you need to do is download the exe and click on it to run it. Currently there is only a Windows App, I will release an app for Mac soon.
 
-I will release executables for Mac soon.
+
+[**Click Here to Download the Windows App**](https://github.com/trickydickie/xero-invoice-splitter/releases/download/v1.0.0/XeroInvoiceSplitter64.exe)
+
 
 ## Usage
 
